@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aishwarya Lokhande | Cybersecurity & AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fc;
+      color: #0b1a2e;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* cards */
+    .card {
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 10px 25px rgba(0, 20, 40, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(200, 213, 230, 0.6);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px -10px rgba(0, 30, 60, 0.12);
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0a2f44, #1a5a7a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      border-left: 6px solid #2a7faa;
+      padding-left: 18px;
+      margin-bottom: 28px;
+    }
+    .badge {
+      background: #e6f0f9;
+      color: #1a5a7a;
+      padding: 5px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .skill-tag {
+      background: white;
+      border: 1px solid #cbd8e8;
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #1a2e44;
+      transition: 0.2s;
+    }
+    .skill-tag:hover {
+      background: #2a7faa;
+      color: white;
+      border-color: #2a7faa;
+    }
+    .grid-2 {
+      display: grid;
+      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .grid-3 {
+      display: grid;
+      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .project-card,
+    .exp-card {
+      padding: 1.6rem;
+    }
+    .project-title,
+    .exp-title {
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+    .project-stack,
+    .exp-date {
+      font-size: 0.8rem;
+      color: #3b5c78;
+      margin-bottom: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-outline {
+      border: 1px solid #2a7faa;
+      background: transparent;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #2a7faa;
+      transition: 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      background: #2a7faa;
+      color: white;
+    }
+    .contact-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 8px 22px;
+      border-radius: 60px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: 0.2s;
+      text-decoration: none;
+      color: #1a2e44;
+      font-weight: 500;
+    }
+    .contact-icon i {
+      font-size: 1.2rem;
+      color: #2a7faa;
+    }
+    .contact-icon:hover {
+      background: #2a7faa;
+      color: white;
+    }
+    .contact-icon:hover i {
+      color: white;
+    }
+    .hero {
+      background: linear-gradient(135deg, #ffffff, #edf4fa);
+      border-radius: 2rem;
+      padding: 2rem 2.2rem;
+      margin-top: 32px;
+      margin-bottom: 48px;
+      border: 1px solid #dce5ef;
+    }
+    .cert-category {
+      background: #f9fbfd;
+      border-radius: 24px;
+      padding: 1.3rem;
+      border-left: 4px solid #2a7faa;
+    }
+    .cert-category h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cert-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .cert-list li {
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .cert-list li i {
+      color: #2a7faa;
+      font-size: 0.7rem;
+    }
+    footer {
+      border-top: 1px solid #dce5ef;
+      padding: 32px 0;
+      text-align: center;
+      color: #3b5c78;
+      margin-top: 48px;
+    }
+    @media (max-width: 680px) {
+      .container {
+        padding: 0 18px;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .hero {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+        <div>
+          <h1 style="font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(120deg, #0a2f44, #2a7faa); background-clip: text; -webkit-background-clip: text; color: transparent;">Aishwarya Lokhande</h1>
+          <p style="font-size: 1.2rem; color: #1f4a66; font-weight: 500; margin-top: 6px;">Cybersecurity &amp; AI Enthusiast • B.Tech CSE (2027)</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px;">
+            <a href="mailto:aishwaryalokhande08@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i> Email</a>
+            <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#" class="contact-icon"><i class="fas fa-phone-alt"></i> +91-9834489046</a>
+          </div>
+        </div>
+        <div>
+          <div class="badge"><i class="fas fa-shield-alt"></i> Penetration Testing</div>
+          <div class="badge" style="margin-top: 8px;"><i class="fas fa-robot"></i> TensorFlow.js • ML</div>
+        </div>
+      </div>
+      <p style="margin-top: 28px; font-size: 1rem; color: #254b64; max-width: 85%; border-left: 4px solid #2a7faa; padding-left: 20px;">Final-year CSE student with hands-on experience in ethical hacking, vulnerability assessment, and AI-driven agriculture solutions. Passionate about merging cybersecurity with intelligent systems to create real-world impact.</p>
+    </div>
+
+    <!-- Education + Coursework -->
+    <section>
+      <h2 class="section-title"><i class="fas fa-graduation-cap" style="margin-right: 12px; color: #2a7faa;"></i> Education & Coursework</h2>
+      <div class="grid-2">
+        <div class="card" style="padding: 1.5rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700;">B.Tech CSE</h3>
+          <p style="color: #2a7faa; font-weight: 600;">Sanjivani University • Expected 2027</p>
+          <p style="margin-top: 8px;">Fourth Year Student · CGPA: 8.5+ (ongoing)</p>
+          <p style="margin-top: 6px; color: #1f4a66;"><i class="fas fa-map-pin"></i> Kopargaon, Maharashtra</p>
+        </div>
+        <div class="card" style="padding: 1.5rem;">
+          <h3 style="font-weight: 700; margin-bottom: 12px;">📚 Core Coursework</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Algorithms</span>
+            <span class="skill-tag">OS</span>
+            <span class="skill-tag">DBMS</span>
+            <span class="skill-tag">Computer Networks</span>
+            <span class="skill-tag">Network Security</span>
+            <span class="skill-tag">Software Engineering</span>
+            <span class="skill-tag">Compiler Design</span>
+            <span class="skill-tag">Mobile App Dev</span>
+            <span class="skill-tag">Blockchain</span>
+            <span class="skill-tag">IoT</span>
+            <span class="skill-tag">Computer Graphics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2 class="section-title"><i class="fas fa-cogs"></i> Technical Skills</h2>
+      <div class="card" style="padding: 1.8rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between;">
+          <div><strong>💻 Languages:</strong> Java, Python, C++, C, JavaScript, HTML/CSS</div>
+          <div><strong>🛡️ Cybersecurity:</strong> Kali Linux, Nmap, Wireshark, Metasploit, Burp Suite</div>
+          <div><strong>🧰 Tools:</strong> Git, VS Code, MongoDB, DBMS</div>
+          <div><strong>🤖 AI/ML:</strong> TensorFlow.js, MobileNet, scikit-learn (basic)</div>
+          <div><strong>📌 Concepts:</strong> OOP, Penetration Testing, Threat Modeling, Cryptography, Ethical Hacking, Database Design, IoT Integration</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+      <div class="grid-2">
+        <div class="card exp-card">
+          <div class="exp-title">Cybersecurity Intern <span style="font-weight: 500; font-size: 1rem;">@ SyntecxHub (Remote)</span></div>
+          <div class="exp-date"><i class="far fa-calendar-alt"></i> 2025 · 1 month</div>
+          <ul style="margin-left: 18px; color: #1a2e44; display: flex; flex-direction: column; gap: 8px;">
+            <li>✅ Performed vulnerability scanning & penetration testing on simulated environments using Kali Linux, Nmap, Metasploit, and Burp Suite; documented critical attack vectors.</li>
+            <li>✅ Analyzed network traffic with Wireshark, applied threat modeling to evaluate attack surfaces and mitigation strategies.</li>
+            <li>✅ Implemented cryptography techniques and secure network protocols across ethical hacking labs; studied encryption standards and secure configuration principles.</li>
+          </ul>
+        </div>
+        <div class="card exp-card">
+          <div class="exp-title">Python Programming Intern <span style="font-weight: 500; font-size: 1rem;">@ MITS</span></div>
+          <div class="exp-date"><i class="far fa-calendar-alt"></i> May 2025 · 1 month | Certificate ID: MITS28512</div>
+          <ul style="margin-left: 18px; color: #1a2e44; display: flex; flex-direction: column; gap: 8px;">
+            <li>✅ Completed a 1-month Python internship, applying core programming concepts and developing practical Python-based solutions.</li>
+            <li>✅ Gained hands-on experience with Python scripting, data handling, and software development practices under industry mentorship.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2 class="section-title"><i class="fas fa-folder-open"></i> Flagship Projects</h2>
+      <div class="grid-2">
+        <div class="card project-card">
+          <div class="project-title">🌾 AgriNova AI+</div>
+          <div class="project-stack"><span class="badge">TensorFlow.js</span><span class="badge">MobileNet</span><span class="badge">JavaScript</span><span class="badge">HTML/CSS</span></div>
+          <ul style="margin-left: 18px; color: #1a2e44;">
+            <li>Fully browser‑based agricultural intelligence platform with 18+ modules: AI crop recommendation, disease detection, market simulation, irrigation scheduling, carbon footprint calculation, and sustainability tools.</li>
+            <li>Zero server / internet dependency — all inference runs client‑side using TensorFlow.js + MobileNet, enabling offline use for farmers in low‑connectivity regions.</li>
+          </ul>
+        </div>
+        <div class="card project-card">
+          <div class="project-title">🧬 AgriSense‑AI</div>
+          <div class="project-stack"><span class="badge">Python</span><span class="badge">ML Ensemble</span><span class="badge">IoT</span><span class="badge">Bioinformatics</span></div>
+          <ul style="margin-left: 18px; color: #1a2e44;">
+            <li>Fusion of high‑resolution soil metagenomics (16S rRNA + shotgun functional profiling) with real‑time IoT sensor data into a machine learning ensemble to unlock tropical soil microbiome intelligence.</li>
+            <li>Models biological engine of tropical soils, enabling precision fertilization recommendations beyond standard NPK testing.</li>
+          </ul>
+        </div>
+        <div class="card project-card" style="grid-column: 1 / -1; max-width: 100%;">
+          <div class="project-title">💰 FinWise – Behavioral Banking Engine</div>
+          <div class="project-stack"><span class="badge">JavaScript</span><span class="badge">HTML/CSS</span><span class="badge">Gamification</span></div>
+          <ul style="margin-left: 18px; color: #1a2e44;">
+            <li>Designed a Gen‑Z‑focused banking app with automated 50/30/20 budget allocation, round‑up micro‑savings vault, and subscription leech detector.</li>
+            <li>Gamified UX (XP/leveling system) to drive measurable improvements in savings rate and spending awareness through real‑time alerts and coaching.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+      <div class="grid-3">
+        <div class="cert-category">
+          <h3><i class="fas fa-laptop-code"></i> Development & Data</h3>
+          <ul class="cert-list">
+            <li><i class="fas fa-check-circle"></i> Oracle Academy – Java Fundamentals</li>
+            <li><i class="fas fa-check-circle"></i> GeeksforGeeks – MongoDB</li>
+            <li><i class="fas fa-check-circle"></i> Accenture – Exploratory Data Analysis (Level 2, AI ASCEND)</li>
+          </ul>
+        </div>
+        <div class="cert-category">
+          <h3><i class="fas fa-shield-halved"></i> Security & Professional</h3>
+          <ul class="cert-list">
+            <li><i class="fas fa-check-circle"></i> NASSCOM IT-ITeS SSC Certification</li>
+            <li><i class="fas fa-check-circle"></i> NPTEL – Natural Resources Management</li>
+            <li><i class="fas fa-check-circle"></i> MITS – Python Programming Internship (MITS28512, May 2025)</li>
+          </ul>
+        </div>
+        <div class="cert-category">
+          <h3><i class="fas fa-leaf"></i> Sustainability & AI</h3>
+          <ul class="cert-list">
+            <li><i class="fas fa-check-circle"></i> AI for Agriculture (self‑paced)</li>
+            <li><i class="fas fa-check-circle"></i> Machine Learning Specialization (ongoing)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Languages -->
+    <section>
+      <h2 class="section-title"><i class="fas fa-users"></i> Leadership & Languages</h2>
+      <div class="grid-2">
+        <div class="card" style="padding: 1.5rem;">
+          <h3><i class="fas fa-language"></i> Japanese Language Club – Active Member</h3>
+          <p style="margin-top: 6px; color: #1a2e44;">Sanjivani University</p>
+          <p>Developing Japanese language proficiency and cross‑cultural communication skills alongside technical studies.</p>
+        </div>
+        <div class="card" style="padding: 1.5rem;">
+          <h3><i class="fas fa-globe"></i> Languages</h3>
+          <ul style="list-style: none; margin-top: 10px;">
+            <li>🇮🇳 Marathi (Native)</li>
+            <li>🇮🇳 Hindi (Fluent)</li>
+            <li>🇬🇧 English (Fluent)</li>
+            <li>🇯🇵 Japanese (Basic)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / footer -->
+    <section>
+      <div class="card" style="background: linear-gradient(115deg, #edf4fa, #ffffff); padding: 2rem; text-align: center;">
+        <h3 style="font-size: 1.6rem; font-weight: 700;">Let’s connect and build secure, intelligent systems</h3>
+        <p style="margin: 12px 0;">Open to cybersecurity, AI/ML, and full‑stack development roles.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-top: 22px;">
+          <a href="mailto:aishwaryalokhande08@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> aishwaryalokhande08@gmail.com</a>
+          <a href="#" class="btn-outline"><i class="fab fa-linkedin"></i> LinkedIn (add your link)</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Aishwarya Lokhande — Cybersecurity & AI Portfolio</p>
+      <p style="font-size: 0.75rem; margin-top: 6px;"><i class="fas fa-shield-alt"></i> “Secure code, smarter planet”</p>
+    </footer>
+  </div>
+</body>
+</html>
